@@ -26,6 +26,10 @@
   --c-customers-link: #8E8F99;
   --c-customers-link-hov: #404bbf;
   --c-projects-cover-text: #f4f4fd;
+  --c-footer-form-input: #fff;
+  --c-modal-form-label: #8e8f99;
+  --c-modal-form-textarea: rgba(46, 47, 66, 0.4);
+  --c-modal-form-link: #4d5ae5;
 
   /*  todo:
   /** backgroud colors  */
@@ -42,6 +46,7 @@
   --c-footer-social-link-bg-hov: #31d0aa;
   --c-portfolio-projects-item-bg: #fff;
   --c-projects-cover-text-bg: #4d5ae5;
+  --c-modal-form-checkbox-bg: #404bbf;
 
   /*  todo:
   /** button colors : text, bg & borders */
@@ -49,17 +54,35 @@
   --c-close-btn-icon-hov: #fff;
   --c-modal-close-btn-bg: #e7e9fc;
   --c-modal-close-btn-bg-hov: #404bbf;
-  --c-header-border: #e7e9fc;
   --c-main-btn-font: #fff;
-  --c-about-item-border: #E7E9FC;
-  --c-customers-item-border: #8E8F99;
-  --c-customers-link-border-hov: #404bbf;
   --c-studio-btn-bg: #4d5ae5;
   --c-studio-btn-bg-hov: #404bbf;
   --c-portfolio-btn-font: #4d5ae5;
   --c-portfolio-btn-bg: #f4f4fd;
   --c-portfolio-btn-bg-hov: #404bbf;
+  --c-footer-form-btn: #fff;
+  --c-footer-form-btn-bg: #4d5ae5;
+  --c-footer-form-btn-bg-hov: #404bbf;
+  --c-modal-form-btn: #fff;
+  --c-modal-form-btn-bg: #4d5ae5;
+  --c-modal-form-btn-bg-hov: #404bbf;
+
+  /*  todo:
+  /** icons & borders colors */
+  --c-header-border: #e7e9fc;
+  --c-about-item-border: #E7E9FC;
+  --c-customers-item-border: #8E8F99;
+  --c-customers-link-border-hov: #404bbf;
   --c-portfolio-item-border: #e7e9fc;
+  --c-footer-form-border: #fff;
+  --c-footer-form-icon: #fff;
+  --c-modal-form-input-border: rgba(46, 47, 66, 0.4);
+  --c-modal-form-textarea-border: rgba(46, 47, 66, 0.4);
+  --c-modal-form-textarea-border-foc: #4d5ae5;
+  --c-modal-form-input-foc: #4d5ae5;
+  --c-modal-form-checkbox: rgba(46, 47, 66, 0.4);
+  --c-modal-form-check-icon: #f4f4fd;
+
 }
 
 /* ? ++++++++++++++++++++++++++++
@@ -659,7 +682,7 @@ img {
   transform: scale(.8);
 }
 
-/* TODO FORM Footer */
+/* FORM Footer */
 
 .footer-form-text {
   margin-bottom: 16px;
@@ -682,9 +705,9 @@ img {
   font-size: 12px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: var(--c-footer-form-input);
   background-color: transparent;
-  border: 1px solid #FFFFFF;
+  border: 1px solid var(--c-footer-form-border);
   border-radius: 4px;
   outline: none;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -696,9 +719,9 @@ img {
   height: 40px;
   min-width: 165px;
   padding: 8px 24px;
-  color: #fff;
+  color: var(--c-footer-form-btn);
   cursor: pointer;
-  background-color: #4D5AE5;
+  background-color: var(--c-footer-form-btn-bg);
   border: none;
   transition: background-color 250ms var(--t-cubic-bezier);
   justify-content: center;
@@ -709,12 +732,12 @@ img {
   width: 24px;
   height: 24px;
   margin-left: 16px;
-  fill: #fff;
+  fill: var(--c-footer-form-icon);
 }
 
 .footer-form-btn:hover,
 .footer-form-btn:focus {
-  background-color: #404bbf;
+  background-color: var(--c-footer-form-btn-bg-hov);
 }
 
 /* ! +++++++++++++++++++++++++++++
@@ -980,11 +1003,12 @@ img {
 }
 
 .modal-form-label {
-  display: inline-block;
+  display: block;
+  margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.17;
-  letter-spacing: 0.01em;
-  color: #8E8F99;
+  letter-spacing: 0.04em;
+  color: var(--c-modal-form-label);
 }
 
 .modal-form-input {
@@ -993,7 +1017,7 @@ img {
   padding-left: 38px;
   margin: 0;
   background-color: transparent;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+  border: 1px solid var(--c-modal-form-input-border);
   border-radius: 4px;
   outline: transparent;
   transition: border-color 250ms var(--t-cubic-bezier);
@@ -1006,9 +1030,9 @@ img {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  color: rgba(46, 47, 66, 0.4);
+  color: var(--c-modal-form-textarea);
   background-color: transparent;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+  border: 1px solid var(--c-modal-form-textarea-border);
   border-radius: 4px;
   outline: transparent;
   transition: border-color 250ms var(--t-cubic-bezier);
@@ -1016,7 +1040,11 @@ img {
 }
 
 .modal-form-field>.modal-form-item input:focus {
-  border: 1px solid #4D5AE5;
+  border: 1px solid var(--c-modal-form-input-foc);
+}
+
+.modal-form-textarea:focus {
+  border-color: var(--c-modal-form-textarea-border-foc);
 }
 
 .modal-form-input[type="user-privacy"] {
@@ -1032,11 +1060,11 @@ img {
 }
 
 .modal-form-field>.modal-form-item input:focus+svg {
-  fill: #4D5AE5;
+  fill: var(--c-modal-form-input-foc);
 }
 
 .modal-form-link {
-  color: #4D5AE5;
+  color: var(--c-modal-form-link);
   text-decoration: underline;
 }
 
@@ -1047,7 +1075,7 @@ img {
   height: 16px;
   margin-right: 8px;
   cursor: pointer;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+  border: 1px solid var(--c-modal-form-checkbox);
   border-radius: 2px;
   transition:
     background-color 250ms var(--t-cubic-bezier),
@@ -1077,14 +1105,14 @@ img {
 
 .modal-form-input[id="user-privacy"]:checked+.modal-form-label .modal-form-checkbox,
 .modal-form-input[id="user-privacy"]:checked+.modal-form-label .modal-form-icon {
-  background-color: #404BBF;
+  background-color: var(--c-modal-form-checkbox-bg);
   border: none;
-  fill: #F4F4FD;
+  fill: var(--c-modal-form-check-icon);
 }
 
 .modal-form-btn {
-  color: #fff;
-  background-color: #4D5AE5;
+  color: var(--c-modal-form-btn);
+  background-color: var(--c-modal-form-btn-bg);
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   transition: background-color 250ms var(--t-cubic-bezier);
@@ -1092,5 +1120,5 @@ img {
 
 .modal-form-btn:hover,
 .modal-form-btn:focus {
-  background-color: #404bbf;
+  background-color: var(--c-modal-form-btn-bg-hov);
 }
